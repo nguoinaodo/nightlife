@@ -1,0 +1,25 @@
+doctype html
+html
+    head
+        title Home
+        meta(charset="utf-8")
+        link(href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet" type="text/css")
+        link(href="/public/css/main.css" rel="stylesheet" type="text/css")
+    body
+        .container    
+            #user
+                if auth
+                    span #{displayName}
+                    a(href="/logout") Log out
+                else 
+                    a(href="/auth/github") Log in
+            #banner
+                h1 Find Bar
+            #main
+                #search
+                    input(type="text")#searchInput
+                    button#searchBtn Search
+                #list
+        
+        script(type="text/javascript" src="/common/ajax-functions.js")
+        script(type="text/javascript" src="/controllers/client.js")
